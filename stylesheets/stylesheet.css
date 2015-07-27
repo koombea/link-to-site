@@ -7,7 +7,8 @@ body {
   font-family: 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #606c71; }
+  font-weight: 300;
+  color: #9B9B9B; }
 
 a {
   color: #1e6bb8;
@@ -27,12 +28,34 @@ a {
   transition: color 0.2s, background-color 0.2s, border-color 0.2s; }
   .btn + .btn {
     margin-left: 1rem; }
-
 .btn:hover {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   background-color: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.3); }
+
+.btn--purple{
+  background: #5F50E1;
+  border-radius: 3px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 2px;
+  line-height: 19px;
+}
+
+.btn--purple:hover {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  background-color: #544AA6;
+  border-color: rgba(255, 255, 255, 0.3); }
+
+.one-whole{
+  width: 100%;
+}
+
+
 
 @media screen and (min-width: 64em) {
   .btn {
@@ -101,7 +124,7 @@ a {
 
 @media screen and (max-width: 42em) {
   .page-header {
-    padding: 11rem 1rem; }
+    padding: 11rem 1rem 4rem; }
   .top-header{
     text-align: center;
     padding: 0 1em;
@@ -162,7 +185,7 @@ a {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: normal;
-  color: #159957; }
+  color: #3A425A; }
 .main-content p {
   margin-bottom: 1em; }
 .main-content code {
@@ -252,10 +275,32 @@ a {
   margin: 1rem 0;
   background-color: #eff0f1;
   border: 0; }
+.list.points--green li{
+  color: #36CC7A;
+}
+.list.points--green li span{
+  color: #9B9B9B;
+}
 
+.push--ends{
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+.soft--bottom{
+  padding-bottom: 24px;
+}
+.push--bottom{
+  margin-bottom: 24px;
+}
+.text--center{
+  text-align: center;
+}
+.koombea-logo img{
+  vertical-align: middle;
+}
 @media screen and (min-width: 64em) {
   .main-content {
-    max-width: 64rem;
+    max-width: 42rem;
     padding: 2rem 6rem;
     margin: 0 auto;
     font-size: 1.1rem; } }
