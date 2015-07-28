@@ -18,6 +18,6 @@
   }
   define( 'LTS_PREFIX',   '_linktosite_' );
   define( 'LTS_URL',      rtrim( plugin_dir_url( __FILE__ ), '/' ) );
-  include 'includes/lts-class.php';
-  include 'includes/external-permalink.php';
+  require_once( 'includes/lts-class.php' );
+  require_once( 'includes/external-permalink.php' );
 ?>
