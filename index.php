@@ -4,12 +4,13 @@ global $default_link;
 $lts_debug = false;
 
 define('IFRAME_REQUEST' , true);
-
 ob_start();
-require_once( preg_replace( "/wp-content.*/", "wp-load.php", __FILE__ ) );
-require_once( preg_replace( "/wp-content.*/", "/wp-admin/includes/admin.php", __FILE__ ) );
-/** WordPress Administration Bootstrap */
-require_once( preg_replace( "/wp-content.*/", "/wp-admin/admin.php", __FILE__ ) );
+
+$location = realpath($_SERVER["DOCUMENT_ROOT"]);
+include ($location . '/wp-load.php');
+include ($location . '/wp-admin/includes/admin.php');
+include ($location . '/wp-admin/admin.php');
+
 ob_end_clean();
 
 header( 'Content-Type: ' . get_option( 'html_type' ) . '; charset=' . get_option( 'blog_charset' ) );
@@ -402,9 +403,9 @@ function lts_post(){
           .autocomplete({
             minLength: 0,
             source: function( request, response ) {
-                  // delegate back to autocomplete, but extract the last term
-                  response( jQuery.ui.autocomplete.filter(
-                    LTS_TAGS, extractLast( request.term ) ) );
+              // delegate back to autocomplete, but extract the last term
+              response( jQuery.ui.autocomplete.filter(
+                LTS_TAGS, extractLast( request.term ) ) );
             },
             focus: function() {
               // prevent value inserted on focus

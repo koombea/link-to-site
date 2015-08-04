@@ -19,10 +19,10 @@
   class linkToSite{
     function __construct(){
       add_action( 'admin_menu', array( $this, 'assets' ) );
-      add_action( 'admin_init', array( $this, 'register_settings' ) );
+      add_action( 'admin_init', array( $this, 'lts_1810_register_settings' ) );
     }
 
-    function register_settings() {
+    function lts_1810_register_settings() {
       // flag our settings
       register_setting(
         LTS_PREFIX . 'settings',

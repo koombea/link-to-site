@@ -19,18 +19,18 @@
 
   global $default_link;
   global $k_meta;
-  function add_meta_boxes() {
+  function lts_1810_add_meta_boxes() {
     add_meta_box(
       'lts-1810',
       'Link To Site - URL External Permalink',
-      'lts_meta_box_display',
+      'lts_1810_meta_box_display',
       'post',
       'normal',
       'high'
     );
-  }add_action('admin_menu', 'add_meta_boxes');
+  }add_action('admin_menu', 'lts_1810_add_meta_boxes');
 
-  function lts_meta_box_display() {
+  function lts_1810_meta_box_display() {
     global $post;
     wp_nonce_field( 'lts_1810', 'lts_1810_nonce' );
     $meta = get_post_meta($post->ID, 'lts_1810', true);
@@ -99,19 +99,19 @@
   /**
    * Filter previous_post_link and next_post_link
    */
-  function filter_next_post_link($link) {
+  function lts_1810_filter_next_post_link($link) {
     return "";
-  }add_filter('next_post_link', 'filter_next_post_link');
+  }add_filter('next_post_link', 'lts_1810_filter_next_post_link');
 
-  function filter_previous_post_link($link) {
+  function lts_1810_filter_previous_post_link($link) {
     return "";
-  }add_filter('previous_post_link', 'filter_previous_post_link');
+  }add_filter('previous_post_link', 'lts_1810_filter_previous_post_link');
 
-  function top_form_edit( $post) {
+  function lts_1810_top_form_edit( $post) {
     global $default_link;
     $default_link = str_replace("%postname%",$post->post_name,$default_link);
     if($post )
       echo "<hr><div style='margin: 10px;'><a class='button button-small ' target='_blank' href='" . $default_link . "'>".__( 'View Internal Post' )."</a></div><hr>";
-  }add_action( 'edit_form_after_title', 'top_form_edit' );
+  }add_action( 'edit_form_after_title', 'lts_1810_top_form_edit' );
 
 ?>
